@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}操作结果{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 设置字体 */
+            background-image: url({{ url_for('static', filename='background/7.png')}});
+            background-size: cover; /* 背景图尺寸覆盖整个页面 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 使内容垂直居中 */
+        }
+        .container {
+            max-width: 600px; /* 最大宽度 */
+            background-color: rgba(255, 255, 255, 0.9); /* 内容背景色，使用透明度 */
+            padding: 20px; /* 内容内边距 */
+            border-radius: 8px; /* 边框圆角 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+            text-align: center; /* 文本居中 */
+        }
+        h1 {
+            color: #333; /* 标题颜色 */
+            margin-top: 20px; /* 上方空白 */
+        }
+        p {
+            font-size: 18px; /* 字体大小 */
+            color: #555; /* 文字颜色 */
+            margin-top: 10px; /* 上方空白 */
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px; /* 上方空白 */
+            padding: 10px 20px; /* 按钮内边距 */
+            background-color: #007bff; /* 按钮背景色 */
+            color: #fff; /* 按钮文字颜色 */
+            border: none; /* 去除边框 */
+            border-radius: 5px; /* 圆角 */
+            cursor: pointer; /* 鼠标样式 */
+            text-decoration: none; /* 去除链接样式 */
+            font-size: 16px; /* 按钮文字大小 */
+            transition: background-color 0.3s ease; /* 过渡效果 */
+        }
+        .btn:hover {
+            background-color: #0056b3; /* 悬停时背景色 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>操作结果</h1>
+        <p>{{ result_message }}</p>
+        <a href="/" class="btn">返回首页</a>
+    </div>
+</body>
+</html>

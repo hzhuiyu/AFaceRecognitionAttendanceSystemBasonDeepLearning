@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人脸识别结果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            background-image: url({{ url_for('static', filename='background/4.png')}});
+            background-size: cover; /* 背景图像尺寸 */
+            background-position: center; /* 背景图像位置 */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: rgba(255, 255, 255, 0.9); /* 背景色，透明度为0.9 */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+        .result {
+            margin-top: 30px;
+        }
+        .result h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .result p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        .btn-container a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>人脸识别结果</h1>
+
+        <h2>上传的图片：</h2>
+        <img src="{{ url }}" alt="上传的图片">
+
+        <div class="result">
+            <h2>识别结果：</h2>
+            <p>{{ xinxi }}</p>
+
+            <h2>执行时间：</h2>
+            <p>{{ shijian }}</p>
+        </div>
+
+        <div class="btn-container">
+            <a href="/">返回首页</a>
+        </div>
+    </div>
+</body>
+</html>

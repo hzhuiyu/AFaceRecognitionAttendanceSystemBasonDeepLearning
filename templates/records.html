@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>签到记录</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url({{ url_for('static', filename='background/3.png')}});
+            background-size: cover; /* 背景图像尺寸 */
+            margin: 0;
+            padding: 20px;
+            background-attachment: fixed; /* 使背景图像固定 */
+            background-position: center; /* 背景图像位置 */
+            background-repeat: no-repeat; /* 背景图像不重复 */
+            background-color: #f0f0f0; /* 背景色 */
+            min-height: 100vh; /* 最小高度为视口高度，确保页面填充 */
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* 表格背景色，透明度为0.9 */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff; /* 按钮背景色 */
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3; /* 按钮悬停时背景色 */
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #f2f2f2; /* 悬停时背景色 */
+        }
+    </style>
+</head>
+<body>
+    <h1>签到记录</h1>
+    <a href="/clear_records" class="button">清空记录</a> <!-- 清空记录按钮 -->
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>操作</th>
+            <th>时间</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record[0] }}</td>
+            <td>{{ '签到' if record[1] == 'checkin' else '签退' }}</td>
+            <td>{{ record[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/" class="button">返回首页</a>
+</body>
+</html>

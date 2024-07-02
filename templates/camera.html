@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>签到签退</title>
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='background/1.png')}});
+            background-size: cover; /* 背景图尺寸覆盖整个页面 */
+            font-family: Arial, sans-serif; /* 设置字体 */
+            color: #333; /* 设置文本颜色 */
+            margin: 0; /* 去除默认的页面边距 */
+            padding: 20px; /* 添加页面内边距 */
+        }
+        h1 {
+            text-align: center; /* 标题居中 */
+        }
+        form {
+            text-align: center; /* 表单居中 */
+            margin-top: 20px; /* 上方空白 */
+        }
+        button {
+            padding: 10px 20px; /* 按钮内边距 */
+            font-size: 18px; /* 按钮字体大小 */
+            background-color: #007bff; /* 按钮背景色 */
+            color: #fff; /* 按钮文字颜色 */
+            border: none; /* 去除按钮边框 */
+            cursor: pointer; /* 鼠标悬停时显示手型 */
+            margin-top: 10px; /* 按钮上方空白 */
+            border-radius: 5px; /* 设置按钮圆角 */
+        }
+        button:hover {
+            background-color: #0056b3; /* 鼠标悬停时按钮背景色 */
+        }
+    </style>
+</head>
+<body>
+    <h1>选择签到或签退</h1>
+    <form action="/checkin" method="post">
+        <button type="submit">签到</button>
+    </form>
+    <form action="/checkout" method="post">
+        <button type="submit">签退</button>
+    </form>
+    <form action="/">
+        <button type="submit">返回首页</button>
+    </form>
+</body>
+</html>

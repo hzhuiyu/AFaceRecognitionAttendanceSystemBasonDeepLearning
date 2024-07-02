@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>采集照片</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-image: url({{ url_for('static', filename='background/5.png')}});
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        form, a {
+            display: block;
+            margin-bottom: 10px;
+        }
+        form button, a, .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+            border-radius: 5px; /* 圆角设置 */
+        }
+        form button:hover, a:hover, .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>输入姓名以采集照片</h1>
+    <form action="/collect" method="post">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit" class="btn">开始采集</button>
+    </form>
+    <form action="/process" method="post">
+        <label for="process_name">姓名：</label>
+        <input type="text" id="process_name" name="name" required>
+        <button type="submit" class="btn">处理照片</button>
+    </form>
+    <form action="/train" method="post">
+        <button type="submit" class="btn">训练模型</button>
+    </form>
+    <a href="/camera" class="btn">签到签退</a>
+    <a href="/upload" class="btn">上传照片识别</a>
+    <a href="/records" class="btn">查看签到记录</a>
+    <a href="/" class="btn">返回首页</a>
+</body>
+</html>

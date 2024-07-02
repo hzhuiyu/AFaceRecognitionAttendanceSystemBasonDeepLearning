@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>上传一张照片</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 设置字体 */
+            background-image: url({{ url_for('static', filename='background/6.png')}});
+            background-size: cover; /* 背景图铺满整个页面 */
+            background-position: center; /* 背景图居中 */
+            margin: 0; /* 去除默认的页面边距 */
+            padding: 20px; /* 添加页面内边距 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 使内容垂直居中 */
+        }
+        h2 {
+            text-align: center; /* 标题居中 */
+            color: #333; /* 标题颜色 */
+        }
+        form {
+            text-align: center; /* 表单居中 */
+            margin-top: 20px; /* 上方空白 */
+        }
+        input[type="file"] {
+            padding: 10px; /* 输入框内边距 */
+            margin-top: 10px; /* 上方空白 */
+            border: 1px solid #ccc; /* 输入框边框 */
+            border-radius: 5px; /* 输入框圆角 */
+        }
+        input[type="submit"] {
+            padding: 10px 20px; /* 按钮内边距 */
+            margin-top: 10px; /* 上方空白 */
+            background-color: #007bff; /* 按钮背景色 */
+            color: #fff; /* 按钮文字颜色 */
+            border: none; /* 去除按钮边框 */
+            border-radius: 5px; /* 按钮圆角 */
+            cursor: pointer; /* 鼠标样式 */
+            font-size: 16px; /* 按钮文字大小 */
+            transition: background-color 0.3s ease; /* 过渡效果 */
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* 悬停时背景色 */
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none; /* 去除链接的下划线 */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn-home:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>上传一张照片</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo">
+        <br>
+        <input type="submit" value="上传">
+    </form>
+    <a href="/" class="btn-home">返回首页</a>
+</body>
+</html>

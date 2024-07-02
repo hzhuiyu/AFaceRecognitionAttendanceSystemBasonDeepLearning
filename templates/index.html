@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='background/目录.jpg')}});
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>欢迎使用人脸识别系统</h1>
+    <a href="/camera" class="button">签到签退</a>
+    <br>
+    <a href="/upload" class="button">上传照片识别</a>
+    <br>
+    <a href="/collect" class="button">采集照片</a>
+    <br>
+    <a href="/records" class="button">查看签到记录</a>
+</body>
+</html>
